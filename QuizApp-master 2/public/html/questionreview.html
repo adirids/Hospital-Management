@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script src='javascripts\jquery.js'></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$('.header').click(function(){$('#reviewpage').toggle();});
+
+	var questionNumber=0;
+	var questionREV=new Array();
+	var numberOfQuestions;
+	var stage="";
+
+	var scorehold= localStorage.getItem('_review');
+	//parse to Object Literal the JSON object
+	if(scorehold) scorehold = JSON.parse(scorehold);
+   //Checks whether the stored data exists
+   localStorage.removeItem('_review');
+
+
+$.post('/jsonset',function(data){
+	for(i=0;i<data.quizlist.length;i++)
+	{
+		questionREV[i]=new Array;
+		questionREV[i][0]=data.quizlist[i].question;
+		questionREV[i][1]=data.quizlist[i].option1;
+		questionREV[i][2]=scorehold[i];
+	}
+	numberOfQuestions=questionREV.length;
+	displayReview();
+},'json');
+
+	function displayReview()
+	{
+		var q1;
+		var q2;
+		$('#reviewpage').text('');
+		$('#reviewpage').empty();
+		
+		console.log(questionREV[questionNumber][0]);
+		for(i=0;i<numberOfQuestions;i++)
+		{
+			q1=questionREV[questionNumber][1];
+			q2=questionREV[questionNumber][2];
+			$('#reviewpage').append('<div id="number">'+(questionNumber+1)+'</div><div id="question">'+questionREV[questionNumber][0]+'</div><br><div id="label1" >Your Choice</div><div id="option1">'+q2+'</div><br><div id="label2" >Correct Option</div><div id="option2">'+q1+'</div><br><div id="spacer"><br>');
+			questionNumber++;
+		}
+	}
+
+});
+
+</script>
+<style type="text/css">
+
+body
+{
+background:#567;
+font-family:'Open Sans',sans-serif;
+color:white;
+}
+
+
+.header
+{
+font-size:20px;
+background-color:#2E8B57;
+border: 4px solid yellow;
+/*border-radius:4px;*/
+margin-left:20px;
+margin-right:20px;
+}
+
+#reviewpage
+{
+font-size:20px;
+background-color:#2E8B57;
+border: 4px solid yellow;
+/*border-radius:4px;*/
+margin-left:20px;
+margin-right:20px;
+padding:50px;
+line-height:50px;
+}
+
+
+#number
+{
+display:inline-block;
+border: 8px solid white;
+padding: 5px;
+font-size:25px;
+width:50px;
+margin-right:10px;
+}
+
+
+#question
+{
+display:inline-block;
+border: 8px solid white;
+padding: 5px;
+font-size:25px;
+width:1000px;
+}
+
+
+#option1
+{
+display:inline-block;
+border: 5px solid white;
+width:706px;
+/*margin-top:10px;*/
+}
+
+#option2
+{
+display:inline-block;
+border: 5px solid white;
+width:706px;
+}
+
+
+#label1
+{
+display:inline-block;
+border: 5px solid white;
+width:300px;
+margin-left:86px;
+/*margin-top:10px;*/
+}
+
+#label2
+{
+display:inline-block;
+border: 5px solid white;
+width:300px;
+margin-left:86px;
+}
+
+
+#spacer
+{
+border-bottom:15px solid yellow;
+width:1284px;
+margin-left:-50px;
+margin-bottom:50px;
+}
+</style>
+</head>
+<body>
+		<br>
+	<div class="header">
+			<h1 align="center" class="headtext">Questions Review</h1>
+	</div>
+	<br>
+	<div id="reviewpage" align="center"></div>
+</body>
+</html>

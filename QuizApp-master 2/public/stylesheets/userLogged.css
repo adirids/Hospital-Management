@@ -1,0 +1,133 @@
+@CHARSET "ISO-8859-1";
+
+html
+{
+/*border: 25px solid yellow;*/
+/*border: 30px;
+border-style: solid;
+/*border-color: #ff0000 #0000ff;
+border-color: solid black;*/
+}
+
+
+body
+{
+background-color:solid black;
+background-image: url("../images/mainbg2.jpg");
+
+}
+
+
+.bighold
+{
+background-color:	#333333;
+width:700px;
+margin-left:-105px;
+/*margin-left:auto;
+margin-right:auto;*/
+position:relative;
+/*vertical-align: middle;*/
+transform: translate(0, 20%);
+padding: 10px 20px;
+border: 20px;
+border-radius: 20px;
+border-color: white;
+}
+
+
+.name
+{
+font-family: sans-serif;
+color: white;
+background-color:#696969;
+width: 300px;
+border-radius: 7px;
+border: 2px solid #696969;
+/*margin-left:525px;*/
+margin-left:auto;
+margin-right:auto;
+font-size:18px;
+}
+
+
+.imageholder
+{
+margin-left:70px;
+}
+
+
+.image
+{
+width: 560px;
+
+  border-radius: 20px;
+ /* border: 1px solid #D1D3D4*/
+}
+
+
+.buttons
+{
+
+ background: #696969;
+ width:180px;
+ font-family: sans-serif;
+ padding: 10px 20px;
+color:white;
+-moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+/*margin-left:565px;*/
+margin-left:auto;
+margin-right:auto;
+font-size:30px;
+}
+
+.button1
+{
+margin-left:200px;
+}
+
+
+.button2
+{
+margin-left:320px;
+}
+
+div[class="buttons"]:hover
+{
+background: #2E8B57;
+}
+
+div[class="name"]:hover
+{
+border: 2px solid red;
+}
+
+#play
+{
+	display: inline-block;
+	text-align:center;
+}
+
+#instructions
+{
+	display: inline-block;
+	text-align:center;
+}
+
+#scores
+{
+	display: inline-block;
+	margin-top:5px;
+	margin-left:-5px;
+}
+
+#logout
+{
+	display: inline-block;
+	margin-top:5px;
+}
+#buttonholder
+{
+
+}

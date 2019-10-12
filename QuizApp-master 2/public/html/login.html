@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Quiz Login Form</title>
+
+    <link rel="stylesheet" href="..\stylesheets\loginstyle.css">
+
+</head>
+
+<body>
+
+  <span href="#" class="button" id="toggle-login">Log in</span>
+
+<div id="login">
+  <div id="triangle"></div>
+  <h1>Log in</h1>
+  <form id="form" action="/loginaction" method="post">
+    <input  type="text" name="un" placeholder="Username" />
+    <input  type="password" name="pw" placeholder="Password"  />
+
+    <input  type="submit" value="Log in" />
+
+    <br><br><div align="center"><a href='/register'>Don't Have an Account? Then SignUp</a></div>
+  </form>
+</div>
+
+  <script src='javascripts\jquery.js'></script>
+
+  <script src="javascripts\login.js"></script>
+
+</body>
+
+</html>

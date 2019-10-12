@@ -1,0 +1,201 @@
+html, body {
+	margin: 0;
+	padding: 0;
+ /* background-image:url(greybg.png);*/
+ background:#567;
+	  font-family: Arial, Helvetica, sans-serif;
+	    }
+
+#navContent{
+margin:auto;	
+width:800px;
+height:400px;
+position:relative;
+overflow:hidden;
+}
+
+#game1{
+margin:auto;
+width:800px;
+height:400px;
+right:0px;
+position:absolute;
+}
+
+#game2{
+margin:auto;	
+width:800px;
+height:400px;
+right:-800px;
+position:absolute;
+}
+ 
+.questionText
+{
+font-size:27px;
+color:#FFF;
+}
+
+.option
+{width:400px;
+height:30px;
+margin:15px;
+font-size:18px;
+color:#FFFFFF; 
+padding:2px;
+padding-left:10px;
+border: 2px solid white;
+cursor:pointer;
+background-color:#3399FF;
+}
+
+.option:hover{
+border:#FC0 solid 2px;
+color:#FC0;
+}
+
+
+		
+
+
+
+
+
+
+
+ 
+
+#topbar{
+height:50px;
+margin:auto;
+margin-top:50px;
+color:#FFF;
+font-size:36px;
+font-family:Arial, Helvetica, sans-serif;
+width:800px;
+border-bottom:solid white 1px;
+}
+ 
+.spacer{
+height:20px;
+}
+
+ 
+
+
+
+
+.feedback1{
+width:180px;
+padding:8px 20px;
+font-size:30px;
+color:#FFFFCC;
+background-color:#009900;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+margin-left:110px;
+}
+
+.feedback2{
+width:180px;
+padding:8px 20px;
+font-size:30px;
+color:#FFFFCC;
+background-color:#CC3300;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+margin-left:110px;
+}
+ 
+/* 
+@media screen and (max-width:800px) {
+	#topbar{margin-left:1%;margin-right:1%;	width:96%;}
+	#navContent{margin:1%;	width:98%;}
+	#game1{margin:1%;	width:98%;}
+	#game2{margin:1%;	width:98%;}
+
+
+}
+@media screen and (max-width:460px) {
+	.option{width:80%;margin:5%;}
+}
+*/
+
+
+#holder
+{
+
+margin-left:30px;
+margin-right:30px;
+border: 4px solid yellow;
+background:#333333;
+height:500px;
+}
+
+.header
+{
+font-size:20px;
+background-color:#2E8B57;
+border: 4px solid yellow;
+border-radius:4px;
+margin-left:30px;
+margin-right:30px;
+color:white;
+font-family:'Open Sans',sans-serif;
+}
+
+#timer{
+height:50px;
+margin:auto;
+margin-top:50px;
+color:#FFF;
+font-size:24px;
+font-family:Arial, Helvetica, sans-serif;
+width:800px;
+border-bottom:solid white 1px;
+}
+
+#rtime
+{
+	display: inline-block;
+	float:left;
+}
+
+#mtime
+{
+	display: inline-block;
+	float:right;
+}
+
+.buttons
+{
+ display: block;
+ background: #6E22B5;
+ width:180px;
+ font-family: sans-serif;
+ padding: 8px 20px;
+color:white;
+-moz-border-radius: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+/*margin-left:565px;*/
+margin-left:110px;
+/*margin-right:auto;*/
+font-size:30px;
+border: 1px solid white;
+}
+
+div[class="buttons"]:hover 
+{ 
+background: #A155E8; 
+}
+
+#finish
+{
+	margin-left:0px;
+}
+
+#start
+{
+	/*margin-top:25px;*/
+}

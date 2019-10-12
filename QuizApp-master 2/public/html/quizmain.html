@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>   User Logged Successfully   </title>
+ <link rel="stylesheet" href="stylesheets\userLogged.css">
+<script src='javascripts\jquery.js'></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$(".bighold").animate(
+            {"left": "+=400px"},
+    "slow");
+});
+
+function play()
+{
+	window.location="/topic";
+}
+function instructions()
+{
+	window.location="/instructions"
+}
+function scores()
+{
+	window.location="/scores"
+}
+function logout()
+{
+	window.location="/logout"
+}
+
+
+</script>
+
+</head>
+<body>
+
+		<!--br><br><br><br-->
+
+		<div class="bighold" id="part1">
+			<br>
+
+			<div class="name">
+            		<center>{{name}}</center>
+      </div>
+
+      <br>
+
+      <div class="imageholder">
+	 				<img class="image" src="..\images\be1.png" alt="image description" height="176" width="560">
+	 		</div>
+
+	 		<br>
+			<div id="buttonholder" align="center">
+			     <div id="play" class="buttons" onclick="play()">
+					        <a>Play</a>
+			     </div>
+
+
+
+			     <div id="instructions" class="buttons" onclick="instructions()">
+					        <a>Instructions</a>
+			     </div>
+			     <br>
+			     <div id="scores" class="buttons" onclick="scores()">
+					        <a>Leaderboard</a>
+			     </div>
+
+			     <div id="logout" class="buttons" onclick="logout()">
+					        <a>Logout</a>
+
+			     </div>
+			<!--form id="form" action="/logout" method="get"></form-->
+			</div>
+			<br>
+		</div>
+</body>
+</html>

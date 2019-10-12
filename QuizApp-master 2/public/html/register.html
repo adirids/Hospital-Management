@@ -1,0 +1,151 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>NodeQuiz Login Form</title>
+
+<link rel="stylesheet" href="stylesheets\Registerstyle.css">
+
+<script src="javascripts\jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	var len1;
+	var len2;
+	var flen=0;
+	var llen=0;
+
+	$('#fn').hover(function(){
+
+		fname = $('#fn').val();
+        flen = fname.length;
+
+		if(flen < 1) {
+        	$('#fnvalid').text('');
+    		$('#fnvalid').empty();
+			$('#fnvalid').append('First Name cannot be empty');
+        }
+
+        if(flen > 0)
+        {
+        	  $('#fnvalid').hide();
+        }
+
+    });
+
+	$('#ln').hover(function(){
+
+		lname = $('#ln').val();
+        llen = lname.length;
+
+		if(llen < 1) {
+        	$('#lnvalid').text('');
+    		$('#lnvalid').empty();
+			$('#lnvalid').append('Last Name cannot be empty');
+        }
+
+        if(flen > 0)
+        {
+        	  $('#lnvalid').hide();
+        }
+
+    });
+
+	$('#un').change(function(){
+
+		usern = $('#un').val();
+        len1 = usern.length;
+
+		if(len1 < 8) {
+        	$('#unvalid').text('');
+    		$('#unvalid').empty();
+			$('#unvalid').append('Username cannot be less than 8 characters');
+        }
+
+        if(len1 > 7)
+        {
+        	  $('#unvalid').hide();
+        }
+
+    });
+
+	$('#pwd').change(function(){
+
+		pass = $('#pwd').val();
+        len2 = pass.length;
+
+        if(len2 < 8) {
+        	$('#pwdvalid').text('');
+     		$('#pwdvalid').empty();
+			$('#pwdvalid').append('Password cannot be less than 8 characters');
+        }
+
+        if(len2 > 7)
+  	  	{
+      		  $('#pwdvalid').hide();
+  	  	}
+	});
+
+	$('#log1').click(function(){
+
+	         if(len1>=8 && len2>=8 && flen>=1 && llen>=1)
+	        	{
+	        		$('#form').submit();
+	        	}
+	         else
+	        	 {
+	         		if(len1 < 8)
+	        	 	{
+	        	 		$('#unvalid').fadeTo(100, 0.1).fadeTo(100, 1.0).fadeTo(100, 0.1).fadeTo(100, 1.0);
+	        	 	}
+	         		if(len2 < 8)
+	        	 	{
+	        	 		$('#pwdvalid').fadeTo(100, 0.1).fadeTo(100, 1.0).fadeTo(100, 0.1).fadeTo(100, 1.0);
+	        	 	}
+	         		if(flen < 1)
+	        	 	{
+	        	 		$('#fnvalid').fadeTo(100, 0.1).fadeTo(100, 1.0).fadeTo(100, 0.1).fadeTo(100, 1.0);
+	        	 	}
+	         		if(llen < 1)
+	        	 	{
+	        	 		$('#lnvalid').fadeTo(100, 0.1).fadeTo(100, 1.0).fadeTo(100, 0.1).fadeTo(100, 1.0);
+	        	 	}
+	        	 }
+
+	});
+
+});
+
+</script>
+
+</head>
+
+
+
+<body>
+	<span href="#" class="button" id="toggle-register">Register</span>
+
+<div id="Register">
+  <div id="triangle"></div>
+  <h1>Register</h1>
+  <form id="form" action="/registeraction" method="post">
+
+    <input id='fn' type="text" name="first" placeholder="First Name"/>
+   		 <div id="fnvalid" align="center"></div>
+    <input id='ln' type="text" name="last" placeholder="Last Name"/>
+   		 <div id="lnvalid" align="center"></div>
+    <input id="un" type="text" name="un" placeholder="Username"  />
+    	 <div id="unvalid" align="center"></div>
+    <input id="pwd" type="password" name="pw" placeholder="Password"  />
+    	 <div id="pwdvalid" align="center"></div>
+    <!--input type="submit" value="Register" /-->
+    <div id="log1" align="center" >Register</div>
+    <br><div align="center"><a href='/login'>Have an Account? Then Login Here</a></div>
+  </form>
+</div>
+  <script src='javascripts\jquery.js'></script>
+
+  <script src="javascripts\Register.js"></script>
+</body>
+</html>
